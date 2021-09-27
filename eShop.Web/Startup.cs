@@ -67,11 +67,6 @@ namespace eShop.Web
             services.AddTransient<IProductRepository, ProductRepository>();
             services.AddTransient<IOrderRepository, OrderRepository>();
 
-            services.AddDbContext<DataContext.AppContext>(options =>
-                          options.UseSqlServer(
-                              Configuration.GetConnectionString("DefaultConnection")));
-
-
             services.AddTransient<IShoppingCart, eShop.ShoppingCart.LocalStorage.ShoppingCart>();            
             services.AddTransient<ISearchProductUseCase, SearchProductUseCase>();
             services.AddTransient<IViewProductUseCase, ViewProductUseCase>();
